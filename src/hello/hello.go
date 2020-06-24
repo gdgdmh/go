@@ -183,7 +183,7 @@ func test017() {
 
 func test018() {
 	// Slicesは参照を使用している
-	names := [4]string {
+	names := [4]string{
 		"John",
 		"Paul",
 		"George",
@@ -199,7 +199,7 @@ func test018() {
 
 func test019() {
 	// スライスリテラル
-	q := []int {2, 3, 5, 7, 11, 13}
+	q := []int{2, 3, 5, 7, 11, 13}
 	fmt.Println(q)
 }
 
