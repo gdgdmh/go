@@ -118,9 +118,94 @@ func test010() {
 	fmt.Println("done")
 }
 
+func test011() {
+	// ポインタ
+	i, j := 42, 2000
+	p := &i
+	// iを出力するので42
+	fmt.Println(*p)
+	*p = 21
+	// iが書き換わるので21
+	fmt.Println(i)
+
+	p = &j
+	*p = *p / 20
+	// jが書き換わるので100
+	fmt.Println(j)
+}
+
+type Vertex struct {
+	X int
+	Y int
+}
+
+func test012() {
+	// 構造体
+	fmt.Println(Vertex{1, 2})
+}
+
+func test013() {
+	// 構造体のアクセス
+	v := Vertex{1, 2}
+	fmt.Println(v.X)
+	fmt.Println(v.Y)
+}
+
+func test014() {
+	// 構造体には.でアクセスする
+	// ポインタは(*p).Xでアクセスしてもp.Xでアクセスも可
+	v := Vertex{2, 3}
+	p := &v
+	(*p).X = 10
+	p.Y = 20
+	fmt.Println(v)
+}
+
+func test015() {
+	// 配列
+	var a [2]string
+	a[0] = "Hello"
+	a[1] = "World"
+	fmt.Println(a)
+}
+
+func test016() {
+	primes := [6]int{2, 3, 5, 7, 11, 13}
+	fmt.Println(primes)
+}
+
+func test017() {
+	// Slices
+	primes := [6]int{2, 3, 5, 7, 11, 13}
+	var s []int = primes[1:4]
+	fmt.Println(s)
+}
+
+func test018() {
+	// Slicesは参照を使用している
+	names := [4]string {
+		"John",
+		"Paul",
+		"George",
+		"Ringo",
+	}
+	fmt.Println(names)
+	x := names[1:3]
+	fmt.Println(x)
+	// PaulがXXXに書き換えられる
+	x[0] = "XXX"
+	fmt.Println(names)
+}
+
+func test019() {
+	// スライスリテラル
+	q := []int {2, 3, 5, 7, 11, 13}
+	fmt.Println(q)
+}
+
 func main() {
 	fmt.Printf("start\n")
-	test010()
+	test019()
 	//fmt.Println(add(1, 2))
 	//a, b := swap("a", "b")
 	//fmt.Println(a, b)
